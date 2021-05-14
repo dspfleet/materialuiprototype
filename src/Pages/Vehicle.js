@@ -1,5 +1,5 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react'
+import { Grid, makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     gridContentBox: {
@@ -13,16 +13,15 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Items() {
+function Vehicle() {
     const classes = useStyles()
-
     return (
         <>
         <Grid container spacing={0} justify = "center" >
             
             <Grid item xs={12} md={6}  className={classes.gridContent}  > 
                 <Typography variant="h4"  >
-                Items
+                Vehicle
                 </Typography>
             </Grid>
         </Grid>
@@ -49,4 +48,4 @@ function Items() {
     )
 }
 
-export default Items
+export default Vehicle

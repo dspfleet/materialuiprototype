@@ -134,6 +134,8 @@ function Layout(props) {
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
+    if(mobileOpen) setMobileOpen(!mobileOpen);
+    
   };
 
   const drawer = (

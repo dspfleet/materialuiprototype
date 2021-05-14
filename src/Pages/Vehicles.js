@@ -10,6 +10,9 @@ import AlbumIcon from '@material-ui/icons/Album';
 import BuildIcon from '@material-ui/icons/Build';
 import FlagIcon from '@material-ui/icons/Flag';
 import React from 'react'
+import LabeledDivider from '../components/LabeledDivider';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,9 +26,12 @@ const useStyles = makeStyles((theme) => ({
     gridContentBox: {
         backgroundColor: '#fff',
         padding: theme.spacing(0),
+        
     },
     gridContent: {
         padding: theme.spacing(3),
+        backgroundColor: theme.palette.info.dark,
+        color: '#fff'
     },
     iconButtonLabel: {
         display: 'flex',
@@ -62,10 +68,14 @@ const useStyles = makeStyles((theme) => ({
 function Vehicles() {
     const classes = useStyles()
     const [itemNumOpen, setItemNumOpen] = React.useState(0);
+    //const [vehicles, setVehicles] = React.useState([1, 2, 3, 4]);
+    const vehicles = [1, 2, 3, 4]
 
     const handleClick = (value) => () => {
         setItemNumOpen(value === itemNumOpen ? 0 : value)
     }
+
+    
 
     return (
         <>
@@ -82,7 +92,13 @@ function Vehicles() {
             <Grid item xs={12} md={6} className={classes.gridContentBox}  > 
             
                 <List className={classes.root}>
-                    {[1, 2, 3, 4].map((value) => {
+                    <LabeledDivider label='Active'></LabeledDivider>
+                    {   
+                        vehicles.map((value, index, array) => {
+                            let dividerHolder = <span></span>
+                            if (array.length - 1 !== index) {
+                                dividerHolder = <Divider />
+                            }
 
                         return (
                             <React.Fragment key={`fr-${value}`} >
@@ -150,12 +166,16 @@ function Vehicles() {
                                         </Grid>
                                     </Grid>
                                 </Collapse>
-                                <Divider />
+                                {dividerHolder}
+                                
                             </React.Fragment>
                         )
+                        
 
                     })}
-
+                    <LabeledDivider label='Inactive'></LabeledDivider>
+                    
+                    
                 </List>
            
                 
