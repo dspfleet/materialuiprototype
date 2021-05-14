@@ -1,6 +1,5 @@
 import {  Avatar, Collapse, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, makeStyles, Typography } from '@material-ui/core';
-import { green, orange, deepOrange, deepPurple, blue } from '@material-ui/core/colors';
-import ImageIcon from '@material-ui/icons/Image';
+import { deepOrange, deepPurple, blue } from '@material-ui/core/colors';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import AvTimerIcon from '@material-ui/icons/AvTimer';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
