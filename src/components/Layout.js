@@ -110,7 +110,10 @@ const useStyles = makeStyles((theme) => ({
   gridContent: {
       backgroundColor: '#fff',
       padding: theme.spacing(3),
-  }
+  },
+  main: {
+    width: '100%',
+  },
 }));
 
 function Layout(props) {
@@ -278,7 +281,7 @@ function Layout(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main >
+      <main  className={classes.main}>
         <div className={classes.toolbar} />
         
         <Switch>
