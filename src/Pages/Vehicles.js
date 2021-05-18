@@ -1,16 +1,22 @@
-import {  Avatar, Collapse, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, makeStyles, Typography } from '@material-ui/core';
-import { deepOrange, deepPurple, blue } from '@material-ui/core/colors';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import AvTimerIcon from '@material-ui/icons/AvTimer';
-import ReportProblemIcon from '@material-ui/icons/ReportProblem';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
-import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import OpacityIcon from '@material-ui/icons/Opacity';
-import AlbumIcon from '@material-ui/icons/Album';
-import BuildIcon from '@material-ui/icons/Build';
-import FlagIcon from '@material-ui/icons/Flag';
 import React from 'react'
-import LabeledDivider from '../components/LabeledDivider';
+import {  Avatar, Collapse, Divider, Grid, IconButton,  List, ListItem, ListItemAvatar, ListItemText, makeStyles, Typography } from '@material-ui/core';
+import {
+    Link
+  } from "react-router-dom"
+import { deepOrange, deepPurple, blue } from '@material-ui/core/colors'
+import LocalShippingIcon from '@material-ui/icons/LocalShipping'
+import AvTimerIcon from '@material-ui/icons/AvTimer'
+// import ReportProblemIcon from '@material-ui/icons/ReportProblem'
+import AttachFileIcon from '@material-ui/icons/AttachFile'
+import OpacityIcon from '@material-ui/icons/Opacity'
+import AlbumIcon from '@material-ui/icons/Album'
+import BuildIcon from '@material-ui/icons/Build'
+import FlagIcon from '@material-ui/icons/Flag'
+import InfoIcon from '@material-ui/icons/Info'
+
+import FlashOnIcon from '@material-ui/icons/FlashOn';
+
+import LabeledDivider from '../components/LabeledDivider'
 
 
 
@@ -108,7 +114,7 @@ function Vehicles() {
                                             <LocalShippingIcon  />
                                         </Avatar>
                                     </ListItemAvatar>
-                                    <ListItemText  primary="YZ- 012" secondary="JTEZU14R268053623" />
+                                    <ListItemText  primary={`YZ-01${value}`} secondary="JTEZU14R268053623" />
                                     <ListItemText className={classes.extraData}  primary="13,455 miles" secondary="11-Apr-2021" />
                                     <ListItemText  primary="401171" secondary="No Damage" />
                                     
@@ -124,7 +130,7 @@ function Vehicles() {
                                         </Grid>
                                         <Grid item >
                                             <IconButton style={{ color: blue[700] }}  classes={{label: classes.iconButtonLabel}}>
-                                                <ReportProblemIcon fontSize='large'/>
+                                                <FlashOnIcon fontSize='large'/>
                                                 <div className={classes.buttonLabel}>Damage</div>
                                             </IconButton>
                                         </Grid>
@@ -135,8 +141,8 @@ function Vehicles() {
                                             </IconButton>
                                         </Grid>
                                         <Grid item >
-                                            <IconButton style={{ color: blue[700] }}  classes={{label: classes.iconButtonLabel}}>
-                                                <ErrorOutlineIcon fontSize='large'/>
+                                            <IconButton component={Link} to={`/vehicle/${value}`}  style={{ color: blue[700] }}  classes={{label: classes.iconButtonLabel}}>
+                                                <InfoIcon fontSize='large'/>
                                                 <div className={classes.buttonLabel}>Details</div>
                                             </IconButton>
                                         </Grid>

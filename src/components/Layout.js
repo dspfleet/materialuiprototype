@@ -30,6 +30,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import Vehicles from '../Pages/Vehicles';
+import Vehicle from '../Pages/Vehicle';
 
 import {
     BrowserRouter as Router,
@@ -38,6 +39,7 @@ import {
     Link
   } from "react-router-dom";
 import Items from '../Pages/Items';
+import VehicleEdit from '../Pages/VehicleEdit';
 
 
 const drawerWidth = 240;
@@ -289,6 +291,12 @@ function Layout(props) {
         <Switch>
             <Route path="/vehicles">
                 <Vehicles/>
+            </Route>
+            <Route path="/vehicle/:id">
+                <Vehicle/>
+            </Route>
+            <Route path="/vehicleedit/:id">
+                <VehicleEdit/>
             </Route>
             <Route path="/items">
                 <Items/>
