@@ -34,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.info.light,
         
       },
+      modalStyle1:{
+        position:'absolute',
+        top:'10%',
+        left:'10%',
+        overflow:'scroll',
+        height:'100%',
+        display:'block'
+      }
   }))
 
 function Vehicle() {
@@ -53,7 +61,7 @@ function Vehicle() {
 
     return (
         <>
-        <Modal open={open} >
+        <Modal open={open} className={classes.modalStyle1} >
             <VehicleEdit id={id} closeFunction={handleCloseModal}/>
         </Modal>
         <Grid container spacing={0} justify = "center" >

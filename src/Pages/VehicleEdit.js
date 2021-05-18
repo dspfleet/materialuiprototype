@@ -169,6 +169,10 @@ function VehicleEdit({id, closeFunction}) {
                             </MenuItem>
                         ))}
                         </TextField>
+                        <TextField required id="unitCode" label="Unit Code" defaultValue="401171" />
+                        <TextField required id="unitCode" label="Unit Code" defaultValue="401171" />
+                        <TextField required id="unitCode" label="Unit Code" defaultValue="401171" />
+                        <TextField required id="unitCode" label="Unit Code" defaultValue="401171" />
                 </form>
                 
             </Grid>
